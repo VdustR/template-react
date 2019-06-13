@@ -1,0 +1,70 @@
+{
+  "name": "my-react",
+  "version": "0.1.0",
+  "description": "",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "license": "",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "private": true,
+  "scripts": {
+    "build": "poi --prod",
+    "dev": "poi --serve",
+    "commit": "git-cz",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@poi/plugin-eslint": "^12.0.0",
+    "@poi/plugin-pwa": "^12.0.3",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "commitizen": "^3.1.1",
+    "conventional-changelog-cli": "^2.0.21",
+    "cz-conventional-changelog": "^2.1.0",
+    "disable-react-devtools": "^1.0.0",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.0",
+    "poi": "^12.6.10",
+    "prettier": "^1.18.2",
+    "react-scripts": "^3.0.1",
+    "register-service-worker": "^1.6.2",
+    "typescript": "^3.5.1",
+    "typescript-styled-plugin": "^0.14.0"
+  },
+  "dependencies": {
+    "@hot-loader/react-dom": "^16.8.6",
+    "react": "^16.8.6",
+    "react-hot-loader": "^4.11.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc -p tsconfig.json && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,html,htm,vue,css,less,scss,md,mdx,yaml,yml}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx}": "eslint"
+  }
+}
