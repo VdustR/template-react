@@ -25,29 +25,29 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.4.4",
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@poi/plugin-eslint": "^12.0.0",
     "@poi/plugin-pwa": "^12.0.3",
-    "@types/react": "^16.8.19",
+    "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
-    "commitizen": "^3.1.1",
+    "commitizen": "^3.1.2",
     "conventional-changelog-cli": "^2.0.21",
     "cz-conventional-changelog": "^2.1.0",
     "disable-react-devtools": "^1.0.0",
-    "husky": "^2.4.1",
-    "lint-staged": "^8.2.0",
-    "poi": "^12.6.10",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.2.0",
+    "poi": "^12.7.0",
     "prettier": "^1.18.2",
     "react-scripts": "^3.0.1",
     "register-service-worker": "^1.6.2",
-    "typescript": "^3.5.1",
+    "typescript": "^3.5.3",
     "typescript-styled-plugin": "^0.14.0"
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
     "react": "^16.8.6",
-    "react-hot-loader": "^4.11.0"
+    "react-hot-loader": "^4.12.8"
   },
   "config": {
     "commitizen": {
@@ -56,7 +56,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsc -p tsconfig.json && lint-staged",
+      "pre-commit": "tsc --noEmit -p tsconfig.json && lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
