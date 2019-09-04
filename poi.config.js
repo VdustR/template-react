@@ -4,7 +4,7 @@ const existFilter = a => a;
 
 module.exports = {
   entry: [
-    'node_modules/@babel/polyfill',
+    require.resolve('@babel/polyfill'),
     isProduction && 'entries/disableReactDevtools',
     isProduction && 'entries/registerServiceWorker',
     'src/index',
